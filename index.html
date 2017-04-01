@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="shortcut icon" href="">
+	<title>Project 1</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="http://static.smallpicture.com/bootstrap/js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	  <!-- SOCKET STUFF -->
+  	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+
+ 	<script type="text/javascript">
+    
+    /// SOCKET STUFF
+    var socket = io.connect();
+    
+    socket.on('connect', function() {
+      console.log("Connected");
+    });
+
+
+  </script>
+
+</head>
+<body>
+<main>
+
+<div id="poetryzone">
+<span id="0" class="drophere"></span>
+<span id="1" class="drophere"></span>
+<span id="2" class="drophere"></span>
+<span id="3" class="drophere"></span>
+<span id="4" class="drophere"></span>
+<span id="5" class="drophere"></span>
+<span id="6" class="drophere"></span>
+<span id="7" class="drophere"></span>
+<span id="8" class="drophere"></span>
+<span id="9" class="drophere"></span>
+<span id="10" class="drophere"></span>
+<span id="11" class="drophere"></span>
+<span id="12" class="drophere"></span>
+<span id="13" class="drophere"></span>
+<span id="14" class="drophere"></span>
+
+
+
+
+
+
+</div>
+</div>
+<div class="right">
+<header>
+	<h1>magnetic poetry</h1>
+</header>
+<div id="buttons">
+<span class= button onClick = theNouns()>nouns</span>
+<span class= button onClick = theVerbs()>verbs</span>
+<span class= button onClick = theAdjectives()>adjectives</span>
+<span class= button onClick = theAdverbs()>adverbs</span>
+<span class= button onClick = thePronouns()>pronouns</span>
+<span class= button onClick= thePrepositions()>prepositions</span>
+<span class= button onClick= theConjunctions()>conjunctions</span>
+</div>
+
+<div class="wordgallery" id="dropback">
+<div id="nouns"></div>
+<div id="verbs"></div>
+<div id="adverbs"></div>
+<div id="adjectives"></div>
+<div id="pronouns"></div>
+<div id="prepositions"></div>
+<div id="conjunctions"></div>
+
+
+
+</div>
+
+
+<br><br>
+</div>
+
+</main>
+<script>
+getNouns();
+getVerbs();
+getAdjectives();
+getAdverbs();
+getPronouns();
+getPrepositions();
+getConjunctions();
+
+
+
+// console.log(nouns);
+
+
+</script>
+<script type="text/javascript" src="js/dragdrop.js"></script>
+
+</body>
+</html>
