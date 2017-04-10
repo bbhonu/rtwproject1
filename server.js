@@ -48,15 +48,16 @@ io.sockets.on('connection',
 
 			poem[theIndex] = data.word;
 
-			console.log(poem);
+			
 
 
 			//put the data you received into the right index position of poem array
-			theUpdatedPoem=poem[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14];
+			theUpdatedPoem=poem[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
 
 
 			//send the poem array to everyone
-			socket.broadcast.emit('theUpdatedPoem', poem);
+			io.sockets.emit('theUpdatedPoem', poem);
+			console.log(poem);
 
 		});
 

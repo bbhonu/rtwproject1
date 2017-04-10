@@ -12,11 +12,49 @@
 
  	<script type="text/javascript">
     
+    var poem;
     /// SOCKET STUFF
     var socket = io.connect();
     
     socket.on('connect', function() {
       console.log("Connected");
+
+    });
+
+    socket.on('theUpdatedPoem', function(data) {
+    	poem=data;
+    	console.log(poem);
+
+    	// document.getElementById('2').innerHTML = poem[0];
+
+
+    	//for loop to call drop function on each item of the array
+    	for(var i = 0; i<poem.length; i++){
+    		//loop through id's 0 to 14 and add 
+
+    		// document.getElementById(i).innerHTML = (poem[i]);
+
+
+    		//MAKE HTML ELEMENT
+    		    		var s = document.createElement("span");
+
+    		//ASSIGN poem[i] to that element
+    		    		    		s.innerHTML = poem[i];
+
+    		//assign a child to id 'i' 
+
+    		    		document.getElementById(i).appendChild(s);
+    		    		s.className = "word";
+    		    		s.setAttribute("draggable","true");
+
+
+
+
+    	}
+
+    	//set poem[0] to id 0
+
+
     });
 
 

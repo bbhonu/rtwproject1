@@ -31,15 +31,15 @@ word1.addEventListener("dragover", cancelEvent);
 			});
 
     function backwhite() {
-    	$(this).css("backgroundColor","white");
+    	$(this).css("backgroundColor","#e8e8e8");
     }
 
     function hovercolor() {
-   	$(this).css("backgroundColor","red");
+   	$(this).css("backgroundColor","#e523c7");
     }
 
     function colorback() {
-    	$(this).css("backgroundColor","#e3d1dd");
+    	$(this).css("backgroundColor","#e8e8e8");
     }
 
     // function nomore() {

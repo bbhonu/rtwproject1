@@ -1,4 +1,4 @@
-
+/* line 2, ../scss/_base.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -8,199 +8,224 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+/* line 23, ../scss/_base.scss */
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-	display: block;
+  display: block;
 }
+
+/* line 27, ../scss/_base.scss */
 body {
-	line-height: 1;
+  line-height: 1;
 }
+
+/* line 30, ../scss/_base.scss */
 ol, ul {
-	list-style: none;
+  list-style: none;
 }
+
+/* line 33, ../scss/_base.scss */
 blockquote, q {
-	quotes: none;
+  quotes: none;
 }
+
+/* line 36, ../scss/_base.scss */
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+  content: '';
+  content: none;
 }
+
+/* line 41, ../scss/_base.scss */
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-*,*:before,*:after {
-	box-sizing:border-box
+/* line 46, ../scss/_base.scss */
+*, *:before, *:after {
+  box-sizing: border-box;
 }
-
-
-//------------------ end reset
 
 @font-face {
-	font-family: "courier-prime-bold";
-	src: url(../fonts/courier-prime-bold.ttf)
-
+  font-family: "courier";
+  src: url(../fonts/courier-prime-bold.ttf);
 }
-
+@font-face {
+  font-family: "circular-book";
+  src: url(../fonts/circular-book.otf);
+}
+/* line 65, ../scss/_base.scss */
 body {
-	background-color: #e3d1dd;
-	width: 100%;
-	color: #01aba2;
+  background-color: #e8e8e8;
+  width: 100%;
+  color: #0c1b98;
 }
 
+/* line 72, ../scss/_base.scss */
+.word {
+  position: relative;
+  margin: 5px;
+  padding: 3px 6px;
+  background-color: white;
+  border: solid .05px black;
+  color: black;
+}
 
-	.word {
-		position: relative;
-		margin:5px;
-		padding: 3px 6px;
-		background-color: white;
-		border: solid .05px black;
-		color: black;
-
-	}
-
+/* line 82, ../scss/_base.scss */
 header {
-	font-size: 40px;
-	text-align: center;
-	font-family: 'courier-prime-bold';
+  color: #0c1b98;
+  font-size: 40px;
+  text-align: center;
+  font-family: 'courier';
+  background-color: #e8e8e8;
+  padding: 20px;
 }
 
+/* line 90, ../scss/_base.scss */
+#buttons {
+  padding: 10px 10px;
+}
+
+/* line 95, ../scss/_base.scss */
 .button {
-	margin-top: 10px;
-	font-family: 'courier-prime-bold';
+  margin-top: 10px;
+  font-family: 'circular-book';
+  cursor: pointer;
+  padding: 5px;
+  display: inline-block;
+
 }
 
+/* line 105, ../scss/_base.scss */
 .button:hover {
-	color:red;
-}
-
-
-#nouns, #verbs, #adverbs, #pronouns, #conjunctions, #prepositions, #adjectives{
-	display: flex;
-	flex-direction: row;
-	flex-wrap:wrap;
-	justify-content:space-between;
-
+color: #e8e8e8;
+font-style: italic;
+border-bottom: solid 1px #e523c7;
 
 }
 
+/* line 110, ../scss/_base.scss */
+#nouns, #verbs, #adverbs, #pronouns, #conjunctions, #prepositions, #adjectives {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
-
-
-
-
-
+/* line 125, ../scss/_base.scss */
 .right {
-	padding-top: 30px;
-	min-height: 700px;
-    float: right;
-    width: 40vw;
-    height: 100%;
-    display: block;
-
-
+  margin: 20px;
+  float: right;
+  width: 47vw;
+  height: 70vh;
+  display: block;
+  text-align: center;
+  overflow: scroll;
+  background-color: rgba(95,112,192,.5);
 }
 
+/* line 139, ../scss/_base.scss */
 .wordgallery {
-	height: 100%;
-	padding: 4vw;
-	overflow: scroll;
-
-
-
+  height: 100%;
+  padding: 4vw;
 }
 
+/* line 147, ../scss/_base.scss */
 #poetryzone {
-    position: absolute;
-    height: 35%;
-    width: 43vw;
-    margin: 30px;
-    top:100px;
-    float: left;
-    display: inline-block;
-   	display: flex;
-	flex-direction: row;
-	flex-wrap:wrap;
-	justify-content:center;
-	align-content: space-around;
-	border: solid 3px #01aba2;	
-	text-align: center;
-	padding: 10px;
+  position: absolute;
+  height: 35%;
+  width: 43vw;
+  margin: 30px;
+  top: 100px;
+  float: left;
+  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+  border: solid 3px #0c1b98;
+  text-align: center;
+  padding: 10px;
+}
+/* line 164, ../scss/_base.scss */
+#poetryzone .word {
+  position: relative;
+  padding: 4px;
+}
+/* line 170, ../scss/_base.scss */
+#poetryzone .drophere {
+  min-width: 80px;
+  max-width: 100%;
+  height: 30px;
+  margin: 3px;
+  padding-top: 10px;
+}
+/* line 179, ../scss/_base.scss */
+#poetryzone .dontdrop {
+  background-color: #e8e8e8;
+  min-width: 80px;
+  height: 30px;
+  padding-top: 10px;
+}
 
-	.word {
-		position: absolute;
-	}
+@media only screen and (max-width: 700px) {
+  /* line 203, ../scss/_base.scss */
+  main {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 
+  /* line 210, ../scss/_base.scss */
+  header {
+    font-size: 30px;
+    padding: 10px;
+  }
 
-	.drophere{
-	min-width: 80px;
-	max-width: 100%; 
-	background-color: white;
-	height: 30px;
-	margin: 3px;
-	}
+  /* line 216, ../scss/_base.scss */
+  #buttons {
+    height: 100px;
+    padding: 10px;
+  }
 
-	.dontdrop {
-	background-color: #e3d1dd;
-	min-width: 80px;
-	height: 30px;
+  /* line 222, ../scss/_base.scss */
+  .button {
+    font-size: 16px;
+    padding: 10px;
+  }
 
+  /* line 227, ../scss/_base.scss */
+  .right {
+    float: none;
+    width: 100%;
+    height: 400px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-	}
-
-
-
-    }
-
-
-// #dropback {
-// height: 100vh;
-// background-color: blue;
-
-
-// }
-
-
-    @media only screen and (max-width : 700px) {
-    	main {
-    		display: flex;
-    		flex-direction: column-reverse;
-
-    	}
-
-    	.right {
-    		float: none;
-    		width: 80%;
-    		height: 50%;
-    		text-align: center;
-    		margin-left: auto;
-    		margin-right: auto;
-
-    	}
-
-    	#poetryzone {
-    		margin-left: auto;
-    		margin-right: auto;
-    		float: none;
-    		width: 100%;
-    		height: 50%;
-    		align-self: baseline;
-    		top: 500px;
-    	}
-
-
+  /* line 237, ../scss/_base.scss */
+  #poetryzone {
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+    width: 100%;
+    height: 50%;
+    align-self: baseline;
+    top: 400px;
+  }
 }

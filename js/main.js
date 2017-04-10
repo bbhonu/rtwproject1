@@ -7,9 +7,11 @@ function drag(e) {
 	e.dataTransfer.setData("Text", this.id);
 }
 
+//drop is the function that sends the word to the server
 function drop(e) {
-	var words;
+	var words; //'words' is the id of the current word, comes from the json file of words
 	words=e.dataTransfer.getData("Text");
+	
 	this.appendChild(document.getElementById(words));
 	e.preventDefault();
 	// console.log('dropped word: ' + words);
@@ -17,6 +19,7 @@ function drop(e) {
 	var theCurrentWord = document.getElementById(words).innerHTML;
 
 	var theId = document.getElementById(words).parentNode.id;
+	console.log("theId: " + theId);
 
 	//console.log("dropped this word: " + theCurrentWord + ", theId: " + theId);
 
@@ -26,15 +29,20 @@ function drop(e) {
 		'id': theId
 	}
 
-	console.log(dataToSend);
+	// console.log(dataToSend);
 
 	//SEND THE WORD TO THE SERVER
 	socket.emit('droppedWord', dataToSend);
 
 	//on the server, listen for 'droppedWord'
 	//
-
 }
+
+
+//another function to fill the word into the 
+
+
+
 
 function cancelEvent(e){ 
 	e.preventDefault();
@@ -68,6 +76,19 @@ function theNouns(){
 		newElement.id=nouns[i].id; newElement.className="word";
 		newElement.innerHTML=nouns[i].word;
 		document.getElementById('nouns').appendChild(newElement);
+		document.getElementById('nouns').style.display="flex";
+		document.getElementById('verbs').style.display="none";
+		document.getElementById('adverbs').style.display="none";
+		document.getElementById('adjectives').style.display="none";
+		document.getElementById('pronouns').style.display="none";
+		document.getElementById('prepositions').style.display="none";
+		document.getElementById('conjunctions').style.display="none";
+
+
+
+
+
+
 
 		//drag and drop for nouns
 		newElement.setAttribute("draggable","true");
@@ -108,6 +129,13 @@ function theVerbs(){
 		newElement.id=verbs[i].id; newElement.className="word";
 		newElement.innerHTML=verbs[i].word;
 		document.getElementById('verbs').appendChild(newElement);
+		document.getElementById('nouns').style.display="none";
+		document.getElementById('verbs').style.display="flex";
+		document.getElementById('adverbs').style.display="none";
+		document.getElementById('adjectives').style.display="none";
+		document.getElementById('pronouns').style.display="none";
+		document.getElementById('prepositions').style.display="none";
+		document.getElementById('conjunctions').style.display="none";
 
 		//drag and drop for nouns
 		newElement.setAttribute("draggable","true");
@@ -145,6 +173,13 @@ function theAdjectives(){
 		newElement.id=adjectives[i].id; newElement.className="word";
 		newElement.innerHTML=adjectives[i].word;
 		document.getElementById('adjectives').appendChild(newElement);
+		document.getElementById('nouns').style.display="none";
+		document.getElementById('verbs').style.display="none";
+		document.getElementById('adverbs').style.display="none";
+		document.getElementById('adjectives').style.display="flex";
+		document.getElementById('pronouns').style.display="none";
+		document.getElementById('prepositions').style.display="none";
+		document.getElementById('conjunctions').style.display="none";
 
 		//drag and drop for nouns
 		newElement.setAttribute("draggable","true");
@@ -180,12 +215,19 @@ function theAdverbs(){
 		newElement.id=adverbs[i].id; newElement.className="word";
 		newElement.innerHTML=adverbs[i].word;
 		document.getElementById('adverbs').appendChild(newElement);
+		document.getElementById('nouns').style.display="none";
+		document.getElementById('verbs').style.display="none";
+		document.getElementById('adverbs').style.display="flex";
+		document.getElementById('adjectives').style.display="none";
+		document.getElementById('pronouns').style.display="none";
+		document.getElementById('prepositions').style.display="none";
+		document.getElementById('conjunctions').style.display="none";
 
 		//drag and drop for nouns
 		newElement.setAttribute("draggable","true");
 		newElement.addEventListener("dragstart", drag);
 
-		console.log(adverbs[i].word);
+		// console.log(adverbs[i].word);
 
 	}
 }
@@ -217,6 +259,13 @@ function thePronouns(){
 		newElement.id=pronouns[i].id; newElement.className="word";
 		newElement.innerHTML=pronouns[i].word;
 		document.getElementById('pronouns').appendChild(newElement);
+		document.getElementById('nouns').style.display="none";
+		document.getElementById('verbs').style.display="none";
+		document.getElementById('adverbs').style.display="none";
+		document.getElementById('adjectives').style.display="none";
+		document.getElementById('pronouns').style.display="flex";
+		document.getElementById('prepositions').style.display="none";
+		document.getElementById('conjunctions').style.display="none";
 
 		//drag and drop for nouns
 		newElement.setAttribute("draggable","true");
@@ -253,6 +302,13 @@ function thePrepositions(){
 		newElement.id=prepositions[i].id; newElement.className="word";
 		newElement.innerHTML=prepositions[i].word;
 		document.getElementById('prepositions').appendChild(newElement);
+		document.getElementById('nouns').style.display="none";
+		document.getElementById('verbs').style.display="none";
+		document.getElementById('adverbs').style.display="none";
+		document.getElementById('adjectives').style.display="none";
+		document.getElementById('pronouns').style.display="none";
+		document.getElementById('prepositions').style.display="flex";
+		document.getElementById('conjunctions').style.display="none";
 
 		//drag and drop for nouns
 		newElement.setAttribute("draggable","true");
@@ -290,6 +346,13 @@ function theConjunctions(){
 		newElement.id=conjunctions[i].id; newElement.className="word";
 		newElement.innerHTML=conjunctions[i].word;
 		document.getElementById('conjunctions').appendChild(newElement);
+		document.getElementById('nouns').style.display="none";
+		document.getElementById('verbs').style.display="none";
+		document.getElementById('adverbs').style.display="none";
+		document.getElementById('adjectives').style.display="none";
+		document.getElementById('pronouns').style.display="none";
+		document.getElementById('prepositions').style.display="none";
+		document.getElementById('conjunctions').style.display="flex";
 
 		//drag and drop for nouns
 		newElement.setAttribute("draggable","true");
